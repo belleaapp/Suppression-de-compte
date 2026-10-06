@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BELLEA - Suppression de compte</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#ffffff;
+    --card:#ffffff;
+    --text:#111111;
+    --text-light:#666;
+    --border:#e8e8e8;
+    --primary:#111111;
+    --radius:22px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#fafafa;
+    color:var(--text);
+    font-family:'Manrope',sans-serif;
+}
+
+header{
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+    padding:18px 25px;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:'Fraunces',serif;
+    font-size:24px;
+    font-weight:600;
+}
+
+.logo img{
+    height:38px;
+    width:auto;
+}
+
+.hero{
+    max-width:850px;
+    margin:auto;
+    padding:70px 25px 40px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:999px;
+    background:#efefef;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:'Fraunces',serif;
+    font-size:55px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    color:var(--text-light);
+    max-width:650px;
+    line-height:1.8;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:0 25px 80px;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:25px;
+    margin-bottom:20px;
+}
+
+.card h2{
+    font-family:'Fraunces',serif;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.step{
+    background:#fafafa;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:15px 18px;
+    margin:10px 0;
+    transition:.25s;
+}
+
+.step:hover{
+    transform:translateX(5px);
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin:12px 0;
+    line-height:1.6;
+}
+
+.notice{
+    background:#f5f5f5;
+    border-left:5px solid #111;
+    padding:18px;
+    border-radius:10px;
+    margin-top:15px;
+    line-height:1.7;
+}
+
+footer{
+    margin-top:60px;
+    padding-top:30px;
+    border-top:1px solid var(--border);
+    text-align:center;
+    color:#777;
+}
+
+@media(max-width:700px){
+    .hero h1{
+        font-size:38px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="data:image/png;base64,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" alt="Logo BELLEA">
+
+BELLEA
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="badge">
+Suppression de compte
+</div>
+
+<h1>Supprimer votre compte <em>BELLEA</em></h1>
+
+<p>
+Cette page explique comment supprimer définitivement votre compte, quelles données sont supprimées et quelles données peuvent être conservées dans des cas limités.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Comment supprimer votre compte</h2>
+
+<div class="step">
+1. Ouvrez l'application BELLEA.
+</div>
+
+<div class="step">
+2. Connectez-vous à votre compte.
+</div>
+
+<div class="step">
+3. Accédez à la page <strong>Profil</strong>.
+</div>
+
+<div class="step">
+4. Appuyez sur <strong>Supprimer mon compte</strong>.
+</div>
+
+<div class="step">
+5. Une fenêtre de confirmation apparaît.
+</div>
+
+<div class="step">
+6. Saisissez votre nom dans le champ demandé.
+</div>
+
+<div class="step">
+7. Appuyez une seconde fois sur <strong>Supprimer mon compte</strong> afin de confirmer la suppression définitive.
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Demande depuis le site web</h2>
+
+<p>
+Vous ne pouvez plus accéder à l’application ? Envoyez votre demande de suppression à
+<strong>bellea.app@gmail.com</strong>, de préférence depuis l’adresse e-mail associée à votre compte.
+</p>
+
+<p>
+Afin de vérifier votre identité et de retrouver le compte concerné, indiquez dans votre message :
+</p>
+
+<ul>
+<li>votre nom ;</li>
+<li>votre prénom ;</li>
+<li>l’adresse e-mail associée au compte ;</li>
+<li>le numéro de téléphone associé au compte.</li>
+</ul>
+
+<div class="notice">
+Indiquez <strong>« Suppression du compte BELLEA »</strong> dans l’objet du message.
+Après vérification des informations fournies, le compte et les données pouvant être supprimées seront effacés.
+Aucun mot de passe ni code de connexion ne vous sera demandé.
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Données supprimées</h2>
+
+<p>
+Lors de la suppression de votre compte, les éléments suivants sont définitivement supprimés :
+</p>
+
+<ul>
+<li>Compte Firebase Authentication</li>
+<li>Profil utilisateur</li>
+<li>Nom et prénom</li>
+<li>Adresse e-mail</li>
+<li>Numéro de téléphone</li>
+<li>Adresse de livraison</li>
+<li>Favoris</li>
+<li>Informations de fidélité</li>
+<li>Contenu du panier</li>
+<li>Données de profil directement associées au compte</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Données pouvant être conservées</h2>
+
+<p>
+Certaines données peuvent être conservées après la suppression du compte uniquement lorsqu'elles sont nécessaires :
+</p>
+
+<ul>
+<li><strong>Commandes et transactions :</strong> pour respecter les obligations légales, comptables ou fiscales, prévenir la fraude ou gérer un litige.</li>
+<li><strong>Questions et commentaires privés :</strong> ils peuvent être conservés sous une forme anonymisée afin de préserver le suivi des échanges avec l'équipe BELLEA.</li>
+<li><strong>Photos associées à une question ou à un commentaire :</strong> elles peuvent être conservées tant que le contenu concerné reste nécessaire au suivi de la demande.</li>
+</ul>
+
+<div class="notice">
+Les données conservées sont limitées au strict nécessaire et ne sont pas utilisées à des fins publicitaires. Vous pouvez demander la suppression d'une question, d'un commentaire ou d'une photo conservée en écrivant à <strong>bellea.app@gmail.com</strong>.
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Suppression définitive</h2>
+
+<div class="notice">
+La suppression du compte est irréversible. Une fois votre demande confirmée, le compte supprimé ne pourra plus être récupéré. Les données soumises à une obligation légale de conservation pourront toutefois être gardées pendant la durée nécessaire.
+</div>
+
+</div>
+
+<footer>
+
+© 2026 BELLEA — Tous droits réservés
+
+</footer>
+
+</div>
+
+</body>
+
+</html>
